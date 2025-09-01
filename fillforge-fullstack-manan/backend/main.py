@@ -1,16 +1,4 @@
 import os, re, uuid, json
-
-from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
-
-SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")  # reads from .env
-
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-Base = declarative_base()
-
-
 from fastapi import FastAPI, HTTPException, Depends, UploadFile, File, Form
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from fastapi.middleware.cors import CORSMiddleware
@@ -32,7 +20,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY","changeme")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = int(os.environ.get("ACCESS_TOKEN_EXPIRE_MINUTES",60))
 
-DATABASE_URL = os.environ.get("DATABASE_URL","sqlite:///./test.db")
+DATABASE_URL = os.environ.get("mysql+pymysql://username:MananBhutada Sqlpassword1@localhost/univerlsal_autofil")
+
+
+
+
 
 # SQLAlchemy setup
 engine = create_engine(DATABASE_URL, echo=False, future=True)
