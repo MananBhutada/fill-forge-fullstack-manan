@@ -1,0 +1,1 @@
+export default function Forms(){return <div style={{padding:20}}><h2>Forms</h2><p>Upload .docx and see placeholders + fill (frontend placeholder)</p></div>}

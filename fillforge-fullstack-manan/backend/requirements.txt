@@ -1,0 +1,13 @@
+fastapi==0.98.0
+uvicorn[standard]==0.22.0
+sqlalchemy==2.1.0
+pydantic==2.2.1
+python-dotenv==1.0.0
+python-docx==0.8.11
+passlib[bcrypt]==1.7.4
+pyjwt==2.8.0
+python-multipart==0.0.6
+rapidfuzz==3.1.1
+mammoth==1.4.21
+alembic==1.11.1
+pymysql==1.1.0

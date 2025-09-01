@@ -1,0 +1,18 @@
+{
+  "PARENT_NAME": [
+    "Father's Name",
+    "Guardian Name",
+    "Parent",
+    "Parent Name"
+  ],
+  "NAME": [
+    "Full Name",
+    "Candidate Name",
+    "Student Name"
+  ],
+  "DOB": [
+    "Date of Birth",
+    "Birth Date",
+    "DOB"
+  ]
+}

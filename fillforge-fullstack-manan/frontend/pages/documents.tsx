@@ -1,0 +1,1 @@
+export default function Documents(){return <div style={{padding:20}}><h2>Documents</h2><p>Uploader UI placeholder</p></div>}
