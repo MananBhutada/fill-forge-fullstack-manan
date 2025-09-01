@@ -10,7 +10,7 @@ from database import Base  # adjust if your models Base is elsewhere
 # --- Alembic Config object ---
 config = context.config
 
-# --- Metadata for 'autogenerate' support ---
+# --- Metadata for autogenerate ---
 target_metadata = Base.metadata
 
 
