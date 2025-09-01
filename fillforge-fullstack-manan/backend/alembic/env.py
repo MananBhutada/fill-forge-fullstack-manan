@@ -10,15 +10,6 @@ from database import Base  # adjust if your models Base is elsewhere
 # --- Alembic Config object ---
 config = context.config
 
-# --- Logging (guarded to avoid KeyError) ---
-if config.config_file_name is not None:
-    import logging.config
-    import configparser
-    cp = configparser.ConfigParser()
-    cp.read(config.config_file_name)
-    if cp.has_section("formatters"):  # only configure if present
-        logging.config.fileConfig(config.config_file_name)
-
 # --- Metadata for 'autogenerate' support ---
 target_metadata = Base.metadata
 
