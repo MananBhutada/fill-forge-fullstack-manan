@@ -1,23 +1,23 @@
-# Placeholder alembic env.py. For real migrations, adjust.
-from logging.config import fileConfig
-from sqlalchemy import engine_from_config, pool
 from alembic import context
+from sqlalchemy import engine_from_config, pool
 import os
 import sys
 
-# --- add project imports so Alembic knows about your models ---
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))  # ensure backend is on PYTHONPATH
+# --- Add project imports so Alembic knows about your models ---
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from database import Base  # adjust if your models Base is elsewhere
 
-# this is the Alembic Config object
+# --- Alembic Config object ---
 config = context.config
 
-# --- Logging ---
+# --- Logging (guarded to avoid KeyError) ---
 if config.config_file_name is not None:
-    try:
-        fileConfig(config.config_file_name)
-    except KeyError:
-        pass  # skip logging if config is missing pieces
+    import logging.config
+    import configparser
+    cp = configparser.ConfigParser()
+    cp.read(config.config_file_name)
+    if cp.has_section("formatters"):  # only configure if present
+        logging.config.fileConfig(config.config_file_name)
 
 # --- Metadata for 'autogenerate' support ---
 target_metadata = Base.metadata
